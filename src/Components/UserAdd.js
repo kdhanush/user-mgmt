@@ -19,8 +19,9 @@ const UserAdd = () => {
 			formData,
 			config
 		);
+		console.log(data)
 		if (data) {
-			alert('new user added');
+			alert(data.message);
 			let url = window.location.origin.toString()+'/adduser';
 			window.open(url,"_self")
 		}

@@ -8,7 +8,7 @@ import UserCard from './UserCard/UserCard';
 
 const UserList = () => {
 	const [userlist, setUserlist] = useState([]);
-	// const [refresh, setRefresh] = useState(false);
+	const [refresh, setRefresh] = useState(false);
 	console.log(userlist);
 	const colors = [
 		'#FF0000',
@@ -44,14 +44,15 @@ const UserList = () => {
 				`http://3.6.93.159:7853/machstatz/delete_existing_user?email=${email}`,
 				config
 			);
-			let _ = userlist.findIndex(da=>da.email===email);
-			console.log("index to delete",_);
-			if(_){
-				let newUserList = userlist.slice(0);
-				newUserList.splice(_,1);
-				setUserlist(newUserList);
-			}	
+			// let _ = userlist.findIndex(da=>da.email===email);
+			// console.log("index to delete",_);
+			// if(_){
+			// 	let newUserList = userlist.slice(0);
+			// 	newUserList.splice(_,1);
+			// 	setUserlist(newUserList);
+			// }	
 			console.log(data);
+			setRefresh(!refresh)
 		}
 	};
 
@@ -73,7 +74,7 @@ const UserList = () => {
 		fetch();
 		// colorRandomizer();
 	}
-	,[]
+	,[refresh]
 	);
 
 	return (
