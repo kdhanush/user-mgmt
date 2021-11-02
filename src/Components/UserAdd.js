@@ -96,7 +96,7 @@ const UserAdd = () => {
 					placeholder='Your last name..'
 					onChange={(e) => setPwd(e.target.value)}
 				/>
-				<div style={{display:'flex',}}>
+				<div>
 				<button className='button' onClick={formHandler}>
 					Add
 				</button>
